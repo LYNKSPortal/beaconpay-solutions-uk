@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: "BEACONPAY Solutions — Coming Soon",
   description:
     "BEACONPAY Solutions is redefining how businesses send, receive, and manage money globally. Launching soon.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "BEACONPAY Solutions — Coming Soon",
     description: "Fast, secure, and built for scale. The future of payments is almost here.",
