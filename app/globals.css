@@ -33,15 +33,17 @@ body {
   100% { background-position: 200% center; }
 }
 
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-}
-
-@keyframes orbit2 {
-  0% { transform: rotate(90deg) translateX(180px) rotate(-90deg); }
-  100% { transform: rotate(450deg) translateX(180px) rotate(-450deg); }
-}
+/* Circular planet-orbit keyframes — radii in vw so they span the full screen */
+@keyframes orbit1  { from { transform: rotate(0deg)   translateX(8vw)  rotate(0deg);   } to { transform: rotate(360deg) translateX(8vw)  rotate(-360deg); } }
+@keyframes orbit2  { from { transform: rotate(36deg)  translateX(14vw) rotate(-36deg); } to { transform: rotate(396deg) translateX(14vw) rotate(-396deg); } }
+@keyframes orbit3  { from { transform: rotate(72deg)  translateX(20vw) rotate(-72deg); } to { transform: rotate(432deg) translateX(20vw) rotate(-432deg); } }
+@keyframes orbit4  { from { transform: rotate(108deg) translateX(26vw) rotate(-108deg);} to { transform: rotate(468deg) translateX(26vw) rotate(-468deg); } }
+@keyframes orbit5  { from { transform: rotate(144deg) translateX(32vw) rotate(-144deg);} to { transform: rotate(504deg) translateX(32vw) rotate(-504deg); } }
+@keyframes orbit6  { from { transform: rotate(180deg) translateX(38vw) rotate(-180deg);} to { transform: rotate(540deg) translateX(38vw) rotate(-540deg); } }
+@keyframes orbit7  { from { transform: rotate(216deg) translateX(43vw) rotate(-216deg);} to { transform: rotate(576deg) translateX(43vw) rotate(-576deg); } }
+@keyframes orbit8  { from { transform: rotate(252deg) translateX(48vw) rotate(-252deg);} to { transform: rotate(612deg) translateX(48vw) rotate(-612deg); } }
+@keyframes orbit9  { from { transform: rotate(288deg) translateX(53vw) rotate(-288deg);} to { transform: rotate(648deg) translateX(53vw) rotate(-648deg); } }
+@keyframes orbit10 { from { transform: rotate(324deg) translateX(58vw) rotate(-324deg);} to { transform: rotate(684deg) translateX(58vw) rotate(-684deg); } }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -55,9 +57,18 @@ body {
 
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-.animate-orbit { animation: orbit 8s linear infinite; }
-.animate-orbit2 { animation: orbit2 12s linear infinite; }
+.animate-orb1  { animation: orbit1   8s  linear infinite; }
+.animate-orb2  { animation: orbit2   12s linear infinite; }
+.animate-orb3  { animation: orbit3   16s linear infinite; }
+.animate-orb4  { animation: orbit4   22s linear infinite; }
+.animate-orb5  { animation: orbit5   28s linear infinite; }
+.animate-orb6  { animation: orbit6   34s linear infinite; }
+.animate-orb7  { animation: orbit7   40s linear infinite; }
+.animate-orb8  { animation: orbit8   46s linear infinite; }
+.animate-orb9  { animation: orbit9   52s linear infinite; }
+.animate-orb10 { animation: orbit10  58s linear infinite; }
 .animate-fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+
 
 .shimmer-text {
   background: linear-gradient(90deg, #60a5fa, #a78bfa, #34d399, #60a5fa);

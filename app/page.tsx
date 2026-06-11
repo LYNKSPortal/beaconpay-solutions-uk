@@ -31,23 +31,42 @@ const features = [
 export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-grid opacity-60" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.15),transparent)]" />
-      <div className="absolute top-1/4 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl" />
-      <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-emerald-600/8 rounded-full blur-3xl" />
 
-      {/* Orbiting dots */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden lg:block">
-        <div className="relative w-0 h-0">
-          <span className="absolute animate-orbit w-2 h-2 bg-blue-400/60 rounded-full" />
-          <span className="absolute animate-orbit2 w-1.5 h-1.5 bg-violet-400/40 rounded-full" />
+      {/* ── Background layer (z-index 0) ── everything here is strictly behind content */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+        {/* Grid + gradients */}
+        <div className="absolute inset-0 bg-grid opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.15),transparent)]" />
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-emerald-600/8 rounded-full blur-3xl" />
+        {/* Orbiting £ signs — desktop only */}
+        <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="relative w-0 h-0">
+            {[
+              { cls: "animate-orb1",  color: "text-blue-400",    size: "1.2rem" },
+              { cls: "animate-orb2",  color: "text-violet-400",  size: "1.3rem" },
+              { cls: "animate-orb3",  color: "text-cyan-400",    size: "1.4rem" },
+              { cls: "animate-orb4",  color: "text-emerald-400", size: "1.5rem" },
+              { cls: "animate-orb5",  color: "text-sky-400",     size: "1.6rem" },
+              { cls: "animate-orb6",  color: "text-indigo-400",  size: "1.7rem" },
+              { cls: "animate-orb7",  color: "text-teal-400",    size: "1.8rem" },
+              { cls: "animate-orb8",  color: "text-purple-400",  size: "1.9rem" },
+              { cls: "animate-orb9",  color: "text-blue-300",    size: "2rem"   },
+              { cls: "animate-orb10", color: "text-violet-300",  size: "2.1rem" },
+            ].map(({ cls, color, size }) => (
+              <span
+                key={cls}
+                className={`absolute ${cls} ${color} font-black select-none`}
+                style={{ fontSize: size }}
+              >£</span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4 py-20 max-w-5xl w-full mx-auto gap-10">
+      {/* ── Content layer (z-index 1) ── always on top */}
+      <div className="relative flex flex-col items-center text-center px-4 py-20 max-w-5xl w-full mx-auto gap-10" style={{ zIndex: 1 }}>
 
         {/* Badge */}
         <div className="animate-fade-in-up" style={{ animationDelay: "0ms" }}>
@@ -100,7 +119,7 @@ export default function Home() {
         {/* Feature cards */}
         <div className="animate-fade-in-up grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-4" style={{ animationDelay: "500ms" }}>
           {features.map(({ icon: Icon, title, desc, color, border, iconColor }) => (
-            <div key={title} className={`rounded-2xl p-5 bg-gradient-to-br ${color} border ${border} text-left transition-transform duration-200 hover:-translate-y-1`}>
+            <div key={title} className={`count-card rounded-2xl p-5 text-left transition-transform duration-200 hover:-translate-y-1`}>
               <div className={`w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center mb-3 ${iconColor}`}>
                 <Icon className="w-5 h-5" />
               </div>
@@ -117,7 +136,7 @@ export default function Home() {
             { icon: Link2, label: "LinkedIn", href: "#" },
             { icon: Mail, label: "Email", href: "mailto:support@beaconpaysolutions.co.uk" },
           ].map(({ icon: Icon, label, href }) => (
-            <a key={label} href={href} aria-label={label} className="w-10 h-10 glass rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/40 transition-all duration-200">
+            <a key={label} href={href} aria-label={label} className="w-10 h-10 count-card rounded-xl flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">
               <Icon className="w-4 h-4" />
             </a>
           ))}
