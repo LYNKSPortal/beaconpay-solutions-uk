@@ -14,7 +14,7 @@ function Logo() {
         alt="Beaconpay"
         width={200}
         height={40}
-        className="w-[200px] h-auto"
+        className="w-[250px] h-auto"
         priority
       />
     </Link>
