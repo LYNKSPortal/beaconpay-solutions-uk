@@ -54,7 +54,6 @@ export const navigation = {
     { label: "Resources Overview", href: "/resources" },
     { label: "Payroll Insights", href: "/resources/payroll-insights" },
     { label: "Guides", href: "/resources/guides" },
-    { label: "FAQs", href: "/faqs" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
