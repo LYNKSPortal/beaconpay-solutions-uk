@@ -2,15 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navigation } from "@/lib/config";
 
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5 focus-visible:outline-offset-4">
-      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal to-sky flex items-center justify-center text-navy-900 font-bold text-lg glow-teal">
-        B
-      </div>
+      <Image
+        src="/icon.svg"
+        alt=""
+        width={36}
+        height={36}
+        className="w-9 h-9 rounded-xl"
+        priority
+      />
       <span className="text-white font-semibold text-lg tracking-tight">
         Beaconpay<span className="text-teal">.</span>
       </span>

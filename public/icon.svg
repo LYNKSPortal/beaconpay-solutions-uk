@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="Beaconpay icon">
+  <defs>
+    <linearGradient id="iconBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2dd4bf" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="url(#iconBg)" />
+  <path
+    d="M 0 78 C 28 52 64 44 100 62 L 100 100 L 0 100 Z"
+    fill="#0f172a"
+    opacity="0.12"
+  />
+  <text
+    x="50"
+    y="69"
+    text-anchor="middle"
+    font-family="Inter, ui-sans-serif, system-ui, sans-serif"
+    font-size="64"
+    font-weight="900"
+    fill="#0f172a"
+  >B</text>
+</svg>
