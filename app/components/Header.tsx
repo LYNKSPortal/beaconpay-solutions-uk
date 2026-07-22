@@ -14,7 +14,7 @@ function Logo() {
         alt="Beaconpay"
         width={200}
         height={40}
-        className="w-[250px] h-auto"
+        className="w-[160px] sm:w-[180px] lg:w-[250px] h-auto"
         priority
       />
     </Link>
@@ -68,7 +68,7 @@ export default function Header() {
         scrolled ? "glass shadow-lg" : "bg-transparent border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pl-0 pr-4 sm:pr-6 lg:pr-8">
         <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
           <Logo />
 
