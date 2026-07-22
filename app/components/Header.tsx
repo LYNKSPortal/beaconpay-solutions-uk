@@ -8,18 +8,15 @@ import { navigation } from "@/lib/config";
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 focus-visible:outline-offset-4">
+    <Link href="/" className="flex items-center focus-visible:outline-offset-4">
       <Image
-        src="/icon.svg"
-        alt=""
-        width={36}
-        height={36}
-        className="w-9 h-9 rounded-xl"
+        src="/logo.png"
+        alt="Beaconpay"
+        width={200}
+        height={40}
+        className="h-8 w-auto lg:h-9"
         priority
       />
-      <span className="text-white font-semibold text-lg tracking-tight">
-        Beaconpay<span className="text-teal">.</span>
-      </span>
     </Link>
   );
 }
