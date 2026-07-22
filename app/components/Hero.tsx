@@ -38,7 +38,7 @@ export default function Hero({
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl bg-violet/10" />
       </div>
       {showOrbit && (
-        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 pointer-events-none scale-75 lg:scale-100" aria-hidden="true">
           {orbitingPounds.map((config, index) => (
             <span
               key={index}
