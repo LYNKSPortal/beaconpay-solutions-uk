@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { business, navigation } from "@/lib/config";
 import { Mail, Globe, Clock } from "lucide-react";
 
@@ -12,13 +13,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Column 1 */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2.5 text-white">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal to-sky flex items-center justify-center font-bold text-lg text-navy-900 glow-teal">
-                B
-              </div>
-              <span className="font-semibold text-lg tracking-tight">
-                Beaconpay<span className="text-teal">.</span>
-              </span>
+            <Link href="/" className="flex items-center focus-visible:outline-offset-4">
+              <Image
+                src="/logo.png"
+                alt="Beaconpay"
+                width={200}
+                height={40}
+                className="w-[200px] h-auto"
+                priority
+              />
             </Link>
             <p className="text-sm leading-relaxed text-slate-300">
               Reliable payroll, PAYE, CIS, umbrella and contractor solutions for businesses, recruitment agencies and professionals across the UK.
