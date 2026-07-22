@@ -1,38 +1,43 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { business } from "@/lib/config";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import CookieConsent from "./components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.beaconpaysolutions.co.uk"),
+  metadataBase: new URL(business.website),
 
   title: {
-    default: "BEACONPAY Solutions — Coming Soon",
-    template: "%s | BEACONPAY Solutions",
+    default: "Beaconpay Solutions | UK Payroll, PAYE, CIS & Contractor Services",
+    template: "%s | Beaconpay Solutions",
   },
   description:
-    "BEACONPAY Solutions is redefining how businesses send, receive, and manage money globally. Fast payments, bank-grade security, and global reach across 150+ countries. Launching soon.",
+    "Beaconpay Solutions provides professional PAYE, CIS, umbrella, contractor and outsourced payroll services for businesses and recruitment agencies across the UK.",
   keywords: [
-    "BEACONPAY",
     "Beaconpay Solutions",
-    "payment solutions",
-    "fintech",
-    "online payments",
-    "instant payments",
-    "payment gateway",
-    "global payments",
-    "secure payments",
-    "business payments",
-    "financial technology",
-    "money transfer",
-    "UK fintech",
-    "payment processing",
+    "UK payroll",
+    "PAYE payroll",
+    "CIS payroll",
+    "umbrella payroll",
+    "contractor payroll",
+    "recruitment agency payroll",
+    "outsourced payroll",
+    "HMRC compliance",
+    "RTI submissions",
+    "payslips",
+    "National Insurance",
+    "pension auto-enrolment",
+    "payroll outsourcing",
+    "payroll reporting",
   ],
-  authors: [{ name: "BEACONPAY Solutions", url: "https://www.beaconpaysolutions.co.uk" }],
-  creator: "BEACONPAY Solutions",
-  publisher: "BEACONPAY Solutions",
-  category: "Finance & Payments",
+  authors: [{ name: business.name, url: business.website }],
+  creator: business.name,
+  publisher: business.name,
+  category: "Payroll Services",
   robots: {
     index: true,
     follow: true,
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.beaconpaysolutions.co.uk",
+    canonical: business.website,
   },
 
   icons: {
@@ -58,28 +63,28 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 
   openGraph: {
-    title: "BEACONPAY Solutions — Coming Soon",
+    title: "Beaconpay Solutions | UK Payroll, PAYE, CIS & Contractor Services",
     description:
-      "Fast, secure, and built for scale. Accept and send payments across 150+ countries. The future of payments is almost here.",
+      "Professional PAYE, CIS, umbrella, contractor and outsourced payroll services for businesses and recruitment agencies across the UK.",
     type: "website",
-    url: "https://www.beaconpaysolutions.co.uk",
-    siteName: "BEACONPAY Solutions",
+    url: business.website,
+    siteName: business.name,
     locale: "en_GB",
     images: [
       {
         url: "/web-app-manifest-512x512.png",
         width: 512,
         height: 512,
-        alt: "BEACONPAY Solutions",
+        alt: business.name,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "BEACONPAY Solutions — Coming Soon",
+    title: "Beaconpay Solutions | UK Payroll, PAYE, CIS & Contractor Services",
     description:
-      "Fast, secure, and built for scale. Accept and send payments across 150+ countries. The future of payments is almost here.",
+      "Professional PAYE, CIS, umbrella, contractor and outsourced payroll services for businesses and recruitment agencies across the UK.",
     images: ["/web-app-manifest-512x512.png"],
   },
 };
@@ -90,8 +95,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en-GB" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <div className="fixed inset-0 pointer-events-none -z-10" aria-hidden="true">
+          <div className="absolute inset-0 bg-grid opacity-20" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-teal/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-violet/10 rounded-full blur-3xl" />
+        </div>
+        <Header />
+        <main id="main-content" className="flex-1 relative">
+          {children}
+        </main>
+        <Footer />
+        <CookieConsent />
+      </body>
     </html>
   );
 }

@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Beaconpay Solutions
+
+A production-ready UK payroll services website built with [Next.js](https://nextjs.org), React and [Tailwind CSS](https://tailwindcss.com).
+
+## Overview
+
+Beaconpay Solutions provides professional PAYE, CIS, umbrella, contractor and outsourced payroll services for businesses and recruitment agencies across the UK. This site includes:
+
+- Public service, industry, resource and legal pages
+- Reusable UI components and structured content
+- Accessible, responsive design
+- SEO metadata, sitemap, robots.txt and structured data
+- Cookie consent banner with preference management
+- Contact, call-back and careers forms with server-side validation
+- Central business configuration in `lib/config.ts`
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and configure real values before going live:
 
-## Learn More
+```bash
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+- `EMAIL_FROM` — sender address for form submissions
+- `EMAIL_TO` — recipient address for form submissions
+- `SENDGRID_API_KEY` or `RESEND_API_KEY` — email provider API key (optional)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` — start the development server
+- `npm run build` — build for production
+- `npm run start` — start the production server
+- `npm run lint` — run ESLint
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+  components/      # Reusable components (Header, Footer, forms, etc.)
+  api/             # Server-side API routes for form submissions
+  ...pages         # Route folders for each page
+lib/
+  config.ts        # Business details, navigation, legal placeholders
+  data.ts          # Service, industry, FAQ and article content
+  email.ts         # Email helper stub for form submissions
+public/            # Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Important notes before launch
+
+1. Review and update `lib/config.ts` with the confirmed registered company name, number, registered office and ICO/VAT details.
+2. Have a UK data protection professional review the Privacy Policy.
+3. Have a solicitor review the Terms and Conditions, Cookie Policy and legal pages.
+4. Connect the form API routes to a real email provider using environment variables.
+5. Replace placeholder testimonials and article content with approved content when available.
+
+## Deployment
+
+This is a standard Next.js application. Deploy to [Vercel](https://vercel.com), or any platform that supports Next.js server-side API routes.

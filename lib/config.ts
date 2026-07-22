@@ -1,0 +1,66 @@
+export const business = {
+  name: "Beaconpay Solutions",
+  website: "https://www.beaconpaysolutions.co.uk",
+  email: "support@beaconpaysolutions.co.uk",
+  location: "United Kingdom",
+  legalEntity: "Beaconpay Solutions Limited",
+  companyNumber: "17333432",
+  dateOfIncorporation: "10 July 2026",
+  registeredOffice: "Unit 1-3, Salisbury Street, Widnes, Cheshire, WA8 6PJ, United Kingdom",
+  icoNumber: "[ICO registration number - if applicable]",
+  vatNumber: "[VAT number - if applicable]",
+  openingHours: {
+    monday: "9:00am – 5:00pm",
+    tuesday: "9:00am – 5:00pm",
+    wednesday: "9:00am – 5:00pm",
+    thursday: "9:00am – 5:00pm",
+    friday: "9:00am – 5:00pm",
+    saturday: "Closed",
+    sunday: "Closed",
+    bankHolidays: "Closed",
+  },
+  social: {
+    // Only add URLs that are confirmed and active.
+    linkedin: null as string | null,
+    twitter: null as string | null,
+    facebook: null as string | null,
+  },
+} as const;
+
+export const navigation = {
+  main: [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Industries", href: "/industries" },
+    { label: "Resources", href: "/resources" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "/contact" },
+  ],
+  services: [
+    { label: "Umbrella Payroll", href: "/services/umbrella-payroll" },
+    { label: "PAYE Payroll", href: "/services/paye-payroll" },
+    { label: "CIS Payroll", href: "/services/cis-payroll" },
+    { label: "Contractor Payroll", href: "/services/contractor-payroll" },
+    { label: "Recruitment Agency Payroll", href: "/services/recruitment-agency-payroll" },
+    { label: "Payroll Outsourcing", href: "/services/payroll-outsourcing" },
+    { label: "Payroll Reporting", href: "/services/payroll-reporting" },
+    { label: "HMRC Compliance Support", href: "/services/hmrc-compliance" },
+    { label: "Payroll Administration", href: "/services/payroll-administration" },
+    { label: "Payroll Consultancy", href: "/services/payroll-consultancy" },
+  ],
+  resources: [
+    { label: "Resources Overview", href: "/resources" },
+    { label: "Payroll Insights", href: "/resources/payroll-insights" },
+    { label: "Guides", href: "/resources/guides" },
+    { label: "FAQs", href: "/faqs" },
+  ],
+  legal: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms and Conditions", href: "/terms-and-conditions" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
+    { label: "Accessibility Statement", href: "/accessibility" },
+    { label: "Complaints Procedure", href: "/complaints" },
+  ],
+} as const;
